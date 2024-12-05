@@ -1,0 +1,16 @@
+gui:
+  theme:
+    # Border color of focused window
+    activeBorderColor:
+      - green
+      - bold
+
+    # Border color of non-focused windows
+    inactiveBorderColor:
+      - default
+  sidePanelWidth: 0.22
+  showFileTree: false
+  nerdFontsVersion: "3"
+
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"

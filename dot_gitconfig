@@ -1,0 +1,14 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Shane Aflyz
+	email = shane@lifelinelab.io
+[safe]
+	directory = C:/Users/Shane/AppData/Local/nvim
+[diff]
+	tool = nvimdiff
+[fetch]
+	prune = true
