@@ -29,12 +29,16 @@ return {
       -- You can put your default mappings / updates / etc. in here
       --  All the info you're looking for is in `:help telescope.setup()`
       --
-      -- defaults = {
-      --   mappings = {
-      --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-      --   },
-      -- },
-      -- pickers = {}
+      defaults = {
+        path_display = function(opts, path)
+          local tail = require('telescope.utils').path_tail(path)
+          return string.format('%s (%s)', tail, path), { { { 1, #tail }, 'Constant' } }
+        end,
+        mappings = {
+          i = { ['<c-CR>'] = 'to_fuzzy_refine', ['<C-i>'] = require('telescope.actions.layout').toggle_preview },
+        },
+      },
+      pickers = {},
       extensions = {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown(),
